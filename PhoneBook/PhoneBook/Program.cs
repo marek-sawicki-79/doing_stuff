@@ -70,7 +70,7 @@
                         break;
                 }
                 Console.WriteLine("Choose your action:");
-                Console.ReadLine();
+                userInput = Console.ReadLine();
             }
 
         }
