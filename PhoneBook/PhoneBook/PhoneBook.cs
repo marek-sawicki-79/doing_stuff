@@ -27,6 +27,14 @@ namespace PhoneBook
             Console.WriteLine($"Searched contact: {contact.Name},\t\t {contact.Number}");
         }
 
+        private void IterateContacts(List<Contact> contacts)
+        {
+            foreach (var contact in contacts)
+            {
+                ShowContact(contact);
+            }
+        }
+
         public void AddContact(Contact contact)
         {
             Contacts.Add(contact);
@@ -37,7 +45,7 @@ namespace PhoneBook
             Contacts.RemoveAll(c => c.Name.Contains(removingContact));
         }
 
-        public void DisplayContactInfo(string number)
+        public void FindContactByNumber(string number)
         {
             var contact = Contacts.FirstOrDefault(c => c.Number == number);
 
@@ -49,6 +57,19 @@ namespace PhoneBook
             {
                 ShowContact(contact);
             }
+        }
+
+        public void ShowAllContacts()
+        {
+            IterateContacts(Contacts);
+        }
+
+        public void FindContactsByName(string searchedContact)
+        {
+            var foundContacts = Contacts.Where(c => c.Name.Contains(searchedContact)).ToList();
+            IterateContacts(foundContacts);
+
+
         }
     }
 }
