@@ -42,7 +42,7 @@ namespace PhoneBook
 
         public void RemoveContact(string removingContact)
         {
-            Contacts.RemoveAll(c => c.Name.Contains(removingContact));
+            Contacts.RemoveAll(c => c.Name.ToLower().Contains(removingContact.ToLower()));
         }
 
         public void FindContactByNumber(string number)
@@ -68,8 +68,6 @@ namespace PhoneBook
         {
             var foundContacts = Contacts.Where(c => c.Name.ToLower().Contains(searchedContact.ToLower())).ToList();
             IterateContacts(foundContacts);
-
-
         }
     }
 }
