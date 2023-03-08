@@ -62,6 +62,7 @@
                         Console.WriteLine("Whom do you seek?");
                         var searchedContact = Console.ReadLine();
                         phoneBook.FindContactsByName(searchedContact);
+
                         break;
                     case "x":
                         return;

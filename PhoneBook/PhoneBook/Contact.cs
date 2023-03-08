@@ -13,7 +13,7 @@ namespace PhoneBook
         public Contact(string name, string number)
         {
             Name = name;
-            Number = Number;
+            Number = number;
         }
     }
 }

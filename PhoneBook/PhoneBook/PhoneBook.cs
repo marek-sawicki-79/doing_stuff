@@ -66,7 +66,7 @@ namespace PhoneBook
 
         public void FindContactsByName(string searchedContact)
         {
-            var foundContacts = Contacts.Where(c => c.Name.Contains(searchedContact)).ToList();
+            var foundContacts = Contacts.Where(c => c.Name.ToLower().Contains(searchedContact.ToLower())).ToList();
             IterateContacts(foundContacts);
 
 
