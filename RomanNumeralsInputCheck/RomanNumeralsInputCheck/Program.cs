@@ -5,16 +5,27 @@ class Program
     {
         List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
         Console.WriteLine("Write in Roman numerals the edition of the book:");
-        string inputToCheck = Console.ReadLine();
-        if (string.IsNullOrEmpty(inputToCheck))
+        bool allOfUserInputIsInRomanNumerals;
+        bool isValid;
+        do
         {
-            Console.WriteLine("Invalid data");
-        }
-        else
-        {
-         List<char> userInput = inputToCheck.ToCharArray().ToList();
-         var allOfListInputIsInRomanNumeralsList = userInput.Intersect(romanNumerals).Count() == userInput.Count();
-         Console.WriteLine(allOfListInputIsInRomanNumeralsList);
-        }
+            string inputToCheck = Console.ReadLine();
+            if (string.IsNullOrEmpty(inputToCheck))
+            {
+                Console.WriteLine("Invalid data");
+            }
+            else
+            {
+                List<char> userInput = inputToCheck.ToCharArray().ToList();
+                allOfUserInputIsInRomanNumerals = userInput.Intersect(romanNumerals).Count() == userInput.Count();
+                Console.WriteLine(allOfUserInputIsInRomanNumerals);
+                if(allOfUserInputIsInRomanNumerals = true)
+                {
+                    break;
+                }
+                else
+            }
+        } while (isValid = false);
+
     }
 }
