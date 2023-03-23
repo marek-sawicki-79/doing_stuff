@@ -23,7 +23,7 @@ class Program
                 {
                     break;
                 }
-                            }
+            }
         } while (isValid == false);
 
     }
